@@ -1,0 +1,27 @@
+body {
+  width: 100%;
+  padding: 0 2.5% 0 7.5%;
+  background: #efe;
+}
+
+.box {
+  margin: 1em 5% 0.5em 0%;
+  width: 10%;
+
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: inherit;
+  float: left;
+  font-size: 2em;
+  text-align: center;
+  line-height: 3em;
+  height: 3em;
+}
+
+.closed {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.open {
+  background: rgba(0, 0, 0, 0.1);
+}
