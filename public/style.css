@@ -1,7 +1,14 @@
+html {
+	background: url(images/bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 body {
   width: 100%;
   padding: 0 2.5% 0 7.5%;
-  background: #efe;
 }
 
 .box {
