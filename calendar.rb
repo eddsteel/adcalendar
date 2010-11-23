@@ -4,6 +4,7 @@
 require 'rubygems'
 require 'sinatra'
 
+@@offline = false
 configure :offline do
   @@offline = true
 end
