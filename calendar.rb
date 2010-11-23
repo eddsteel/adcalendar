@@ -21,10 +21,6 @@ helpers do
     nums.shuffle
   end
 
-  def get_class(num)
-    num < 12 ? 'open' : 'closed'
-  end
-
   def jquery
     return 'jquery.js' if @@offline
     'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
@@ -46,5 +42,5 @@ __END__
 
 @@page
 - numbers.each do |n|
-  .box{:class=>get_class(n)}
+  .box{:class=>"closed b#{n}"}
     = n
