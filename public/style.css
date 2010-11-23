@@ -16,7 +16,6 @@ body {
   width: 10%;
 
   display: block;
-  border: 1px solid rgba(0, 0, 0, 0.3);
   background: inherit;
   float: left;
   font-size: 2em;
@@ -26,9 +25,9 @@ body {
 }
 
 .closed {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2) !important;
 }
 
 .open {
-  background: rgba(0, 0, 0, 0.1);
+	color: white;
 }
