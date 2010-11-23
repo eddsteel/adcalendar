@@ -35,6 +35,7 @@ __END__
     %meta{:charset => 'utf-8'}
     %title Calendar
     %link{:rel=>'stylesheet', :href=>'style.css'}
+    %link{:rel=>'stylesheet', :href=>'boxes.css'}
     %script{:src=>jquery}
     %script{:src=>'behaviour.js'}
   %body
