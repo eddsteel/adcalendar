@@ -44,7 +44,11 @@ var clickedBox = null;
     $('.closed').click(click_open);
   }
 
-  $(document).ready(start);
+  return {
+    go: function() {
+      $(document).ready(start);
+    }
+  }
 
-})()
+})().go()
 
