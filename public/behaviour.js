@@ -5,10 +5,14 @@ var clickedBox = null;
 	/*
 	 * Open a JQuery'ed box
 	 */
-  var open = function(box) {
-    clickedBox = box;
-		var current = box[0].className;
-    box.attr('className', current.replace('closed', 'open'));
+	var click_open = function(ev) {
+    clickedBox = ev.currentTarget;
+		open(clickedBox);
+	}
+
+  function open(box) {
+		var current = box.className;
+    $(box).attr('className', current.replace('closed', 'open'));
   }
 
   function preopen_closed() {
@@ -19,7 +23,7 @@ var clickedBox = null;
 			text = $(boxes[b]).text().trim();
 			if (today > text)
 			{
-				open($(boxes[b]));
+				open(boxes[b]);
 			}
 		});
 	}
@@ -27,8 +31,9 @@ var clickedBox = null;
 
   var start = function() {
 		preopen_closed();
-    $('.closed').click(open);
-  }
+		resize_boxes();
+		$('.closed').click(click_open);
+	}
 
   $(document).ready(start);
 
