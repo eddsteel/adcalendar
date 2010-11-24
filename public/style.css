@@ -12,16 +12,20 @@ body {
 }
 
 .box {
+  /* Proportional width for screen. Boxes
+   * are squared with JS
+   */
   margin: 1em 5% 0.5em 0%;
   width: 10%;
 
   display: block;
   background: inherit;
   float: left;
-  font-size: 2em;
   text-align: center;
-  line-height: 3em;
+  /* Fairly close, but not always right */
   height: 3em;
+  line-height: 3em;
+  font-size: 2em;
 }
 
 .closed {
