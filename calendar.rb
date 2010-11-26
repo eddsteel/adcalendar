@@ -43,5 +43,5 @@ __END__
 
 @@page
 - numbers.each do |n|
-  .box{:class=>"closed b#{n}"}
+  %a.box{:class=>"closed b#{n}", :href=>"#"}
     = n
