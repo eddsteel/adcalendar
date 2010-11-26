@@ -15,9 +15,26 @@ var clickedBox = null;
     $(box).attr('className', current.replace('closed', 'open'));
   }
 
+  function get_day_of_month()
+	{
+  	var now = new Date();
+  	var month = now.getMonth();
+  	var today = 0;
+  	if (month == 0)
+		{
+			today = 30;
+		}
+		else if (month == 11 || month == 10)
+		{
+			today = now.getDate();
+		}
+
+		return today;
+	}
+
   function preopen_closed() {
-    var today = 12; // TODO
     var text;
+    var today = get_day_of_month();
     var boxes = $('.closed');
     boxes.each(function(b){
       text = $(boxes[b]).text().trim();
