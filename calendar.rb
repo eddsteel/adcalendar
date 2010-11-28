@@ -17,8 +17,7 @@ end
 
 helpers do
   def numbers
-    nums = 1.upto(24).map {|i| i}
-    nums.shuffle
+    1.upto(24).to_a.shuffle
   end
 
   def jquery
