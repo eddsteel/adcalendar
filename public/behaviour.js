@@ -41,16 +41,21 @@ var clickedBox = null;
 		return today;
 	}
 
-  function preopen_closed() {
+  function init_boxes() {
     var text;
     var today = get_day_of_month();
     var boxes = $('.closed');
     boxes.each(function(b){
+      boxes[b].href = 'javascript:void';
       text = $(boxes[b]).text().trim();
       if (today > text)
       {
         open(boxes[b], text);
       }
+			else if (today == text)
+			{
+				$(boxes[b]).click(click_open, text);
+			}
     });
   }
 
@@ -69,7 +74,7 @@ var clickedBox = null;
   }
 
   var start = function() {
-    preopen_closed();
+    init_boxes();
     square_boxes();
     light_boxes();
   }
