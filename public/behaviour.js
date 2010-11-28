@@ -15,10 +15,6 @@ var clickedBox = null;
   }
 
   function open(box, text) {
-    if (text.length == 1)
-    {
-      text = '0' + text;
-    }
     var current = box.className;
     $(box).attr('className', current.replace('closed', 'open'));
     box.href = 'images/' + text + '.jpg'
