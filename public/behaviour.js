@@ -1,18 +1,27 @@
 var clickedBox = null;
+// TODO: 
+//
+// lightbox in correct order
+// fix 0 in images.
 
 (function(){
 
   /*
    * Open a JQuery'ed box
    */
-  var click_open = function(ev) {
+  var click_open = function(ev, text) {
     clickedBox = ev.currentTarget;
-    open(clickedBox);
+    open(clickedBox, text);
   }
 
-  function open(box) {
+  function open(box, text) {
+    if (text.length == 1)
+    {
+      text = '0' + text;
+    }
     var current = box.className;
     $(box).attr('className', current.replace('closed', 'open'));
+    box.href = 'images/' + text + '.jpg'
   }
 
   function get_day_of_month()
@@ -40,7 +49,7 @@ var clickedBox = null;
       text = $(boxes[b]).text().trim();
       if (today > text)
       {
-        open(boxes[b]);
+        open(boxes[b], text);
       }
     });
   }
@@ -55,10 +64,14 @@ var clickedBox = null;
     $('.box').css('font-size', dim / 3);
   }
 
+  function light_boxes() {
+    $('.open').lightBox();
+  }
+
   var start = function() {
     preopen_closed();
     square_boxes();
-    $('.closed').click(click_open);
+    light_boxes();
   }
 
   return {

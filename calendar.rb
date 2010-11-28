@@ -35,8 +35,10 @@ __END__
     %title Calendar
     %link{:rel=>'stylesheet', :href=>'style.css'}
     %link{:rel=>'stylesheet', :href=>'boxes.css'}
+    %link{:rel=>'stylesheet', :href=>'jquery.lightbox-0.5.css'}
     %script{:src=>jquery}
     %script{:src=>'behaviour.js'}
+    %script{:src=>'jquery.lightbox-0.5.js'}
   %body
     = yield
 
