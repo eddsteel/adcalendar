@@ -57,10 +57,10 @@ var clickedBox = null;
 
   function square_boxes(){
     // get width of boxes
-    var dim = $('.box').css('width');
+    var dim = $('.box').width();
 
     // apply height, line height and font-size to all boxes
-    $('.box').css('height', dim);
+    $('.box').height(dim);
     $('.box').css('line-height', dim);
     $('.box').css('font-size', dim / 3);
   }

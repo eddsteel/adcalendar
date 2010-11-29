@@ -202,7 +202,10 @@
 		 * @param integer intImageHeight The image´s height that will be showed
 		 */
 		function _resize_container_image_box(intImageWidth,intImageHeight) {
-			var scaleFactor = ($('body').width() * 0.8) / intImageWidth;
+			var portrait = intImageHeight > intImageWidth;
+			var bDim = portrait ? $('body').height : $('body').width();
+			var iDim = protrait ? intImageHeight : intImageWidth;
+			var scaleFactor = (bDim * 0.8) / iDim;
 			intImageWidth = scaleFactor * intImageWidth;
 			intImageHeight = scaleFactor * intImageHeight;
 			// Get current width and height
@@ -215,14 +218,18 @@
 			var intDiffW = intCurrentWidth - intWidth;
 			var intDiffH = intCurrentHeight - intHeight;
 			// Perfomance the effect
-			$('#lightbox-container-image-box').animate({ width: intWidth, height: intHeight },settings.containerResizeSpeed,function() { _show_image(); });
+			$('#lightbox-container-image-box').animate({ 
+					width: intWidth, 
+					height: intHeight },
+					settings.containerResizeSpeed,
+					function() { _show_image(); });
 			if ( ( intDiffW == 0 ) && ( intDiffH == 0 ) ) {
 				if ( $.browser.msie ) {
 					___pause(250);
 				} else {
 					___pause(100);	
 				}
-			} 
+			}
 			$('#lightbox-container-image-data-box').css({ width: intImageWidth });
 			$('#lightbox-nav-btnPrev,#lightbox-nav-btnNext').css({ height: intImageHeight + (settings.containerBorderSize * 2) });
 		};
