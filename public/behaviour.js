@@ -1,8 +1,4 @@
 var clickedBox = null;
-// TODO: 
-//
-// lightbox in correct order
-// fix 0 in images.
 
 (function(){
 
