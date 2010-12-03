@@ -1,13 +1,13 @@
-var clickedBox = null;
-
 (function(){
 
   /*
    * Open a JQuery'ed box
    */
-  var click_open = function(ev, text) {
-    clickedBox = ev.currentTarget;
-    open(clickedBox, text);
+  var click_open = function(ev) {
+    var clickedBox = ev.currentTarget;
+    open(clickedBox, $(clickedBox).text().trim());
+    light_boxes();
+    return false;
   }
 
   function open(box, text) {
@@ -46,7 +46,7 @@ var clickedBox = null;
       }
 			else if (today == text)
 			{
-				$(boxes[b]).click(click_open, text);
+				$(boxes[b]).click(click_open);
 			}
     });
   }
