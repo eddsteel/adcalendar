@@ -57,8 +57,8 @@ var clickedBox = null;
 
     // apply height, line height and font-size to all boxes
     $('.box').height(dim);
-    $('.box').css('line-height', dim);
-    $('.box').css('font-size', dim / 3);
+    $('.box').css('line-height', dim + "px");
+    $('.box').css('font-size', dim / 3 + "px");
   }
 
   function light_boxes() {
