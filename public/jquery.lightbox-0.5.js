@@ -144,7 +144,7 @@
 			}).show();
 			// Assigning click events in elements to show image
 			$('#lightbox-nav').click(function() {
-					location.href = $('#lightbox-image').attr('src');
+					location.href = $('#lightbox-image').attr('src').replace(/[^\/]*.jpg$/, "large/$&");
 			});
 			// hide when clicking overlay
 			$('#jquery-overlay,#jquery-lightbox').click(function() {
@@ -193,7 +193,6 @@
 			var objImagePreloader = new Image();
 			objImagePreloader.onload = function() {
 				$('#lightbox-image').attr('src',settings.imageArray[settings.activeImage][0]);
-			$('#lightbox-image-a').attr('href', settings.imageArray[settings.activeImage][0]);
 				// Perfomance an effect in the image container resizing it
 				_resize_container_image_box(objImagePreloader.width,objImagePreloader.height);
 				//	clear onLoad, IE behaves irratically with animated gifs otherwise
