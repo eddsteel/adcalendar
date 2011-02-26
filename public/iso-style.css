@@ -1,0 +1,45 @@
+/*
+ * Based on what's at 
+ * http://jsfiddle.net/desandro/DJVX2/2/
+ */
+
+#container {
+  margin-right: 6.51%
+}
+.item {
+  margin: 10px;
+  float: left;
+}
+
+.item.big, .item.big .item-content {
+  width: 340px;
+  height: 220px;
+}
+
+.item, .item-content {
+  width: 100px;
+  height: 100px;
+}
+
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+          transition-property:         transform, opacity;
+}
